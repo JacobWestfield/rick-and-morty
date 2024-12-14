@@ -1,13 +1,94 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 4rem 4rem;
+  background-color: rgb(149, 192, 192);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+hr {
+  border: 1px solid black;
+  margin: 2rem 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  list-style: none;
+}
+
+.active {
+  color: white;
+  background-color: salmon;
+}
+
+.nav-link {
+  border: 2px solid black;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn-common {
+  margin-top: 1rem;
+  background-color: salmon;
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  overflow: hidden;
+  margin: 1rem;
+  padding: 5rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+}
+
+.category-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  overflow: hidden;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  line-height: 0;
+}
+
+img {
+  border-radius: 20%;
 }
