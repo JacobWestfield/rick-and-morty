@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import "./Inputfield.css";
 
 interface InputfieldProps {
@@ -14,7 +14,7 @@ interface InputfieldProps {
   error: string;
 }
 
-export const Inputfield = (props: InputfieldProps) => {
+export const Inputfield: FC<InputfieldProps> = (props) => {
   const classNames = Object.values(props).join(" ");
 
   if (props.type === "radio") {
