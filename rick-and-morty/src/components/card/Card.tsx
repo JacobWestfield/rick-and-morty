@@ -3,7 +3,12 @@ import { CharacterCard } from "./CharacterCard.tsx";
 import { EpisodeCard } from "./EpisodeCard.tsx";
 import { LocationCard } from "./LocationCard.tsx";
 
-export const Card: FC = ({ type, data }) => {
+interface CardProps {
+  type: string;
+  data: JSON;
+}
+
+export const Card: FC<CardProps> = ({ type, data }) => {
   if (type === "Characters") {
     return (
       <>
