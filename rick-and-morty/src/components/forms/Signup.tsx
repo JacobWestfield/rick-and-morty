@@ -27,11 +27,13 @@ const defaultData: SignupData = {
 
 export const Signup: FC<SigninProps> = ({ onSubmit }) => {
   const formRef: HTMLFormElement = useRef();
-  const [formData, setFormData] = useState(defaultData);
+  const [formData, setFormData] = useState<SignupData>(defaultData);
+
+  console.log(formData);
 
   /**
-   * Handles submit of form data (now without backend)
-   * @param e {Event} Some Event on target input element
+   * Handles submit of form data (without backend)
+   * @param e {Event} Change Event on target input element
    */
   const handleSubmit = (e: Event): void => {
     e.preventDefault();
@@ -47,10 +49,8 @@ export const Signup: FC<SigninProps> = ({ onSubmit }) => {
       return;
     }
 
-    console.log(
-      `Posted some data: User -> ${formData.email}${formData.password}`
-    );
-    onSubmit(formData);
+    console.log(formData);
+    //onSubmit(formData);
     formRef.current.reset();
     setFormData(defaultData);
   };

@@ -2,10 +2,8 @@ import React, { FC } from "react";
 import { Inputfield } from "../inputs/Inputfield.tsx";
 import { Button } from "../buttons/Button.tsx";
 import { useState, useRef } from "react";
-
-interface SigninProps {
-  onSubmit: () => void;
-}
+import { useAuthUpdate } from "../../context/AuthProvider.tsx";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface SigninData {
   email: string;
@@ -16,9 +14,14 @@ const defaultData: SigninData = {
   email: "",
   password: "",
 };
-export const Signin: FC<SigninProps> = ({ onSubmit }) => {
+export const Signin: FC = () => {
   const formRef: HTMLFormElement = useRef();
   const [formData, setFormData] = useState(defaultData);
+  const handleSaveUser = useAuthUpdate();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from: string = location.state.from || "/";
 
   /**
    * Handles submit of form data (now without backend)
@@ -33,11 +36,14 @@ export const Signin: FC<SigninProps> = ({ onSubmit }) => {
       }
     }
     console.log(
-      `Posted some data: User -> ${formData.email}${formData.password}`
+      `Posted some data: User -> ${formData.email} ${formData.password}`
     );
-    onSubmit(formData);
+    handleSaveUser(formData.email);
     formRef.current.reset();
     setFormData(defaultData);
+    navigate(from, {
+      replace: true,
+    });
   };
 
   /**

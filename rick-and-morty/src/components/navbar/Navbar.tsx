@@ -9,7 +9,7 @@ interface Tabs {
 export const Navbar: FC<Tabs[]> = ({ tabs }) => {
   return (
     <ul>
-      {tabs.map((tab): Tabs => {
+      {tabs.map((tab: Tabs) => {
         return (
           <li key={tab.url}>
             <NavLink className="nav-link" to={tab.url}>
